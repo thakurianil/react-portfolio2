@@ -1,0 +1,88 @@
+body {
+    /* background-color: beige; */
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    align-content: center;
+
+}
+
+.wrapper {
+    /* height: 50%;
+    width: 50%; */
+    /* background-color: aliceblue; */
+ 
+
+}
+.calculator{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    border-radius: 10px;
+    /* gap: 10px; */
+    /* background-color: brown; */
+
+}
+.calculator display{
+    height: 200px;
+    /* width: 100%; */
+}
+
+.calculator div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* width: 10%;
+    height: 50%;     */
+    background-color: brown;
+    
+}
+.display div{
+    height: 100px;
+    margin: 10px;
+    background-color: aliceblue;
+    width: 80%;
+}
+.part1 div{
+    background-color: black;
+    color: white;
+    width: 40px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 100px;
+}
+
+.part2 div{
+    background-color: black;
+    width: 40px;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 100px;
+}
+.part3 div{
+    background-color: black;
+    width: 40px;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 100px;
+}
+.part4 div{
+    background-color: black;
+    width: 40px;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 100px;
+}
+.part5 div{
+    background-color: black;
+    color: white;
+    width: 40px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 100px;
+}
