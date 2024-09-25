@@ -21,19 +21,19 @@ export const Navbar = () => {
             onClick={() => setSlideMenu(!slideMenu)}
           >
             <li>
-              <a href="#hero">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="#skills">Skills</a>
+              <a href="skill">Skills</a>
             </li>
             <li>
-              <a href="#projects">Projects</a>
+              <a href="project">Projects</a>
             </li>
             <li>
-              <a href="#about">About</a>
+              <a href="about">About</a>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <a href="contact">Contact</a>
             </li>
           </ul>
         </div>

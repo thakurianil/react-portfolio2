@@ -1,8 +1,5 @@
 import "./App.css";
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
@@ -15,27 +12,28 @@ import { Skill } from "./components/Skill";
 function App() {
   return (
     <>
-      {/* <!-- dar mode toggler --> */}
+      <Router>
+        {/* <!-- dark mode toggler --> */}
+        <input type="checkbox" id="darkMode" />
+        <div className="wrapper">
+          <label htmlFor="darkMode">
+            <i className="fa-solid fa-circle-half-stroke"></i>
+          </label>
 
-      <input type="checkbox" id="darkMode" />
-      <div className="wrapper">
-        <label htmlFor="darkMode">
-          <i className="fa-solid fa-circle-half-stroke"></i>
-        </label>
-        {/* <!-- navbar --> */}
-        <Navbar />
+          {/* <!-- navbar --> */}
+          <Navbar />
 
-        <Routes>
-          <Route  path="/" element={<Hero></Hero>} />
-          <Route  path="skill" element={<Skill/>} />
-          <Route  path="project" element={<Project/>} />
-          <Route  path="About" element={<About/>} />
-          <Route  path="contact" element={<Contact>} />
+          <Routes>
+            <Route path="/" element={<Hero />} />
+            <Route path="skill" element={<Skill />} />
+            <Route path="project" element={<Project />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+          </Routes>
 
-        </Routes>
-
-        <Footer />
-      </div>
+          <Footer />
+        </div>
+      </Router>
     </>
   );
 }
