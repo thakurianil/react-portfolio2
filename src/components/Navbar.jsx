@@ -31,6 +31,7 @@ export const Navbar = () => {
             </li>
             <li>
               <a href="about">About</a>
+              {/* aaejlgba */}
             </li>
             <li>
               <a href="contact">Contact</a>
