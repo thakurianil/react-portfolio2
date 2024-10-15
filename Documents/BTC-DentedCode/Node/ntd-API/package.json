@@ -1,0 +1,19 @@
+{
+  "name": "ntd-api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon App.js"
+  },
+  "author": "Anil Khand",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "fs": "^0.0.1-security",
+    "mongoose": "^8.7.0",
+    "morgan": "^1.10.0"
+  }
+}
