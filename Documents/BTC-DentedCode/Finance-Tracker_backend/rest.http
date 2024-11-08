@@ -1,0 +1,19 @@
+###
+POST http://localhost:9000/api/v1/users
+Content-Type: application/json
+
+{
+    "username": "Anil",
+    "email": "anil@gmail.com",
+    "password": "hello"
+}
+
+###
+
+POST http://localhost:9000/api/v1/users/login
+Content-Type:  application/json
+
+{
+    "email": "anil@gmail.com",
+    "password": "hello"
+}
