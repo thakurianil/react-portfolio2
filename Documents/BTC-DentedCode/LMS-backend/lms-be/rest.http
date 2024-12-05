@@ -1,0 +1,79 @@
+@rootURL = http://localhost:8000
+@apiEP = {{rootURL}}/api/v1
+@userAPI = {{apiEP}}/users
+@bookAPI = {{apiEP}}/books
+
+### Post user 
+POST {{userAPI}}
+Content-Type: application/json
+
+{
+    "fName": "test",
+    "lName": "shrestha",
+    "phone": "4104444444",
+    "email": "test@gmail.com",
+    "password": "123456"
+}
+
+### Login user 
+POST {{userAPI}}/login
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "123456"
+}
+
+### user profile
+GET {{userAPI}}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyOTQ1MzAyLCJleHAiOjE3MzI5NDYyMDJ9.6GBg27uoHRYEi83CwSh_8fZ3VTK3VKzpxLeAJ_M03KY
+
+### get new access jwt
+GET {{userAPI}}/refresh-accessjwt
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyNjY1NjI3LCJleHAiOjE3MzUyNTc2Mjd9.webED2MEpMJAe_KuexcvqDzBkwxIaQsOGrIUVFBsVOE
+
+
+### BOOK MANAGEMENT APIs
+
+### protected - admin - create book
+POST {{bookAPI}}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyOTQ1MzAyLCJleHAiOjE3MzI5NDYyMDJ9.6GBg27uoHRYEi83CwSh_8fZ3VTK3VKzpxLeAJ_M03KY
+Content-Type: application/json
+
+{
+    "title": "Learning JS",
+    "author": "JS MAN",
+    "thumbnail": "https://randomuser.me/api/portraits/men/59.jpg",
+    "isbn": "12345667",
+    "publishedYear": 1992,
+    "description": "Learning JS"
+}
+
+### protected - amdin- update book detail
+PUT {{bookAPI}}/67466e41d46b0856784987d7
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyNjY5MDc0LCJleHAiOjE3MzI2Njk5NzR9.4REtP85PZVQXpGx36ggLWe0Btp_-gnbQCN10C1H5DTo
+Content-Type: application/json
+
+{
+    "title": "Learning JS",
+    "author": "JS MAN",
+    "thumbnail": "https://randomuser.me/api/portraits/men/59.jpg",
+    "publishedYear": 1992,
+    "description": "Learning JS",
+    "status": "inactive"
+}
+
+### protected - admin - delete by id
+DELETE {{bookAPI}}/67466e41d46b0856784987d7
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyNjY5MDc0LCJleHAiOjE3MzI2Njk5NzR9.4REtP85PZVQXpGx36ggLWe0Btp_-gnbQCN10C1H5DTo
+
+### protected - admin - get all books 
+GET {{bookAPI}}/all
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNzMyNjY5MDc0LCJleHAiOjE3MzI2Njk5NzR9.4REtP85PZVQXpGx36ggLWe0Btp_-gnbQCN10C1H5DTo
+
+### public - get book by id 
+GET {{bookAPI}}/6746706dd46b0856784987e6
+### public - get book by id 
+GET {{bookAPI}}
+
+
