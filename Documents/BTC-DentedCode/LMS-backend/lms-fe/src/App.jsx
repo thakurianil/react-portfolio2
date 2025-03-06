@@ -20,6 +20,8 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import BookList from "./pages/book/BookList";
 import AddNewBook from "./pages/book/AddNewBook";
 import EditBook from "./pages/book/EditBook";
+import MyBorrow from "./pages/borrow/MyBorrow";
+import VerifyUser from "./pages/signin-singup/VerifyUser";
 
 function App() {
   const dispatch = useDispatch();
@@ -48,6 +50,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route path="book/:_id" element={<BookLanding />} />
+          <Route path="verify/:_token" element={<VerifyUser />} />
         </Route>
         {/* Private Routes */}
 
@@ -59,6 +62,7 @@ function App() {
 
         {/* Both admin and users */}
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="my-books" element={<MyBorrow />} />
       </Routes>
       <ToastContainer />
     </>

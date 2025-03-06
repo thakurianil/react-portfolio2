@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const rootURL = "http://localhost:8000/api/v1/";
+const rootURL = import.meta.env.VITE_APP_ROOT_SERVER;
 const userEP = rootURL + "users";
 const bookEP = rootURL + "books";
 
@@ -18,6 +18,7 @@ export const apiProcesser = async ({
   data,
   isPrivate,
   isRefreshJwt,
+  contentType = "application/json",
 }) => {
   const headers = {
     Authorization: isPrivate
@@ -25,6 +26,8 @@ export const apiProcesser = async ({
         ? getRefreshJWT()
         : getAccessJWT()
       : null,
+
+    "Content-type": contentType,
   };
   try {
     const response = await axios({

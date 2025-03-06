@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, Col, Nav, Row, Spinner, Tab, Tabs } from "react-bootstrap";
 import { ReviewBlock } from "../../components/customCard/ReviewBlock";
 import { Stars } from "../../components/stars/Stars";
+import { borrowBookAction } from "../../features/borrow/borrowAction";
 // import { addNewBurrowAction } from "../../features/burrows/burrowAction";
 
 const BookLanding = () => {
@@ -42,6 +43,14 @@ const BookLanding = () => {
       //     thumbnail: thumbnail,
       //   })
       // );
+      console.log("BURROWING");
+      dispatch(
+        borrowBookAction({
+          bookId: _id,
+          bookTitle: title,
+          thumbnail,
+        })
+      );
     }
   };
 

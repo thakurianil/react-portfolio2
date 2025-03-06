@@ -19,7 +19,13 @@ const AddNewBook = () => {
     //1. call post new book api
     //2. status check
 
-    dispatch(postNewBookAction(form));
+    const formData = new FormData();
+
+    Object.keys(form).forEach((key) => {
+      formData.append(key, form[key]);
+    });
+
+    dispatch(postNewBookAction(formData));
   };
 
   return (
@@ -36,9 +42,21 @@ const AddNewBook = () => {
         <h4 className="py-4">Fill up the form to add new book</h4>
 
         <Form onSubmit={handleOnSubmit}>
-          {inputFields.map((input, i) => (
-            <CustomInput key={i} {...input} onChange={handleOnChange} />
-          ))}
+          <Form.Group controlId="bookFile">
+            <Form.Label>Upload Book Cover Image</Form.Label>
+            <Form.Control
+              type="file"
+              name="bookFile"
+              accept="image/*" // Only accept image files
+              onChange={handleOnChange}
+            />
+          </Form.Group>
+          {inputFields.map(
+            (input, i) =>
+              input.name != "thumbnail" && (
+                <CustomInput key={i} {...input} onChange={handleOnChange} />
+              )
+          )}
 
           <div className="d-grid">
             <Button type="submit">Submit New Book</Button>

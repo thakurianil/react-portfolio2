@@ -18,6 +18,7 @@ export const postNewBook = async (obj) => {
     url: bookEP,
     data: obj,
     isPrivate: true,
+    contentType: "multipart/form-data",
   };
   return apiProcesser(axiosObj);
 };
@@ -30,7 +31,7 @@ export const fetchSingleBook = async (_id) => {
   return apiProcesser(axiosObj);
 };
 
-export const updateABook = async ({_id, ...obj}) => {
+export const updateABook = async ({ _id, ...obj }) => {
   const axiosObj = {
     method: "put",
     url: bookEP + "/" + _id,
@@ -40,8 +41,7 @@ export const updateABook = async ({_id, ...obj}) => {
   return apiProcesser(axiosObj);
 };
 
-export const deleteBook = async (_id)=>{
-
+export const deleteBook = async (_id) => {
   const axiosObj = {
     method: "delete",
     url: bookEP + "/" + _id,
@@ -49,5 +49,4 @@ export const deleteBook = async (_id)=>{
   };
 
   return apiProcesser(axiosObj);
-
 };

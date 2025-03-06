@@ -1,6 +1,6 @@
 import { apiProcesser } from "../../helpers/axiosHelper";
 
-const rootURL = "http://localhost:8000";
+const rootURL = import.meta.env.VITE_APP_ROOT_SERVER;
 const userEP = rootURL + "/api/v1/users";
 
 export const postNewUser = async (obj) => {
@@ -28,5 +28,16 @@ export const fetchUserInfo = () => {
     url: userEP,
     isPrivate: true,
   };
+  return apiProcesser(axiosObj);
+};
+
+// verify user api
+
+export const verifyUserAxios = (token) => {
+  const axiosObj = {
+    method: "get",
+    url: userEP + "/verify/" + token,
+  };
+
   return apiProcesser(axiosObj);
 };
