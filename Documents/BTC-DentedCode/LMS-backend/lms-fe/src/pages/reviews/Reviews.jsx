@@ -21,6 +21,19 @@ const Reviews = () => {
     dispatch(getReviews(isPrivate));
   }, [dispatch]);
 
+  const handleOnSwitchChange = (e) => {
+    const { checked, value } = e.target;
+
+    if (window.confirm("Are you sure, you want to change the status?")) {
+      console.log(checked, value);
+      dispatch(
+        updateReviewAction({
+          status: checked ? "active" : "inactive",
+          _id: value,
+        })
+      );
+    }
+  };
   return (
     <UserLayout pageTitle="All Reviews List">
       <div>
