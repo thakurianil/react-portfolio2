@@ -9,6 +9,19 @@ import { useNavigate } from "react-router-dom";
 // import { postNewUser } from "../../features/users/userAxios";
 
 const SignUp = () => {
+  const [form, setForm] = useState({});
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleOnChange = (e) => {
+    const { name, value } = e.target;
+
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+
   const handleOnSubmit = async (e) => {
     e.preventDefault();
 
