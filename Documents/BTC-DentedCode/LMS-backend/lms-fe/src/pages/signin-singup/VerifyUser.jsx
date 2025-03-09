@@ -6,6 +6,21 @@ import { toast } from "react-toastify";
 import { verifyUserAxios } from "../../features/user/userAxios";
 
 export const VerifyUser = () => {
+  const { _token } = useParams();
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleVerificaiton = async () => {
+    setIsLoading(true);
+    const { status, message } = await verifyUserAxios(_token);
+    setIsLoading(false);
+    if (status == "success") {
+      setSuccess(message);
+    } else {
+      setError(message);
+    }
+  };
 
   return (
     <div>
