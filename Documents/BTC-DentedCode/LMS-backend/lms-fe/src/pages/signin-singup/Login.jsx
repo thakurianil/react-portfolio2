@@ -13,9 +13,6 @@ export const Login = () => {
   const emailRef = useRef("");
   const passRef = useRef("");
 
-  // location
-  const location = useLocation();
-  const navigate = useNavigate();
 
   // to handle return location
   const { user } = useSelector((state) => state.userInfo);
