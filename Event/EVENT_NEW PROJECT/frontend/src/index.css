@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-50 text-brand-dark font-sans antialiased;
+  }
+}
+
+.auth-card {
+  @apply bg-white p-8 rounded-2xl shadow-xl w-full max-w-md border border-gray-100;
+}
+
+.input-field {
+  @apply w-full border-gray-200 rounded-lg p-3 text-brand-dark focus:ring-2 focus:ring-brand-500 focus:border-brand-500 shadow-sm transition-all;
+}
+
+.btn-primary {
+  @apply w-full bg-brand-600 hover:bg-brand-500 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition-all;
+}
